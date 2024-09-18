@@ -1,10 +1,81 @@
-<div class="flashcard" onclick="this.classList.toggle('flipped')">
+<<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashcards</title>
+    <style>
+        .flashcard {
+            width: 200px;
+            height: 100px;
+            perspective: 1000px;
+            margin: 10px;
+            display: inline-block;
+        }
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform 0.6s;
+            transform-style: preserve-3d;
+        }
+        .card.flip {
+            transform: rotateY(180deg);
+        }
+        .front, .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            background-color: #f9c74f;
+            border: 1px solid #333;
+        }
+        .back {
+            transform: rotateY(180deg);
+            background-color: #90be6d;
+        }
+    </style>
+</head>
+<body>
+
+<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
     <div class="card">
-        <div class="front">
-            <strong>Pergunta:</strong> Quem é conhecido como "O Rei do Futebol"?
-        </div>
-        <div class="back">
-            <strong>Resposta:</strong> Pelé.
-        </div>
+        <div class="front">Qual é a capital da França?</div>
+        <div class="back">Paris</div>
     </div>
 </div>
+
+<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+    <div class="card">
+        <div class="front">Qual é a capital da Espanha?</div>
+        <div class="back">Madri</div>
+    </div>
+</div>
+
+<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+    <div class="card">
+        <div class="front">Qual é a capital do Japão?</div>
+        <div class="back">Tóquio</div>
+    </div>
+</div>
+
+<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+    <div class="card">
+        <div class="front">Qual é a capital da Alemanha?</div>
+        <div class="back">Berlim</div>
+    </div>
+</div>
+
+<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+    <div class="card">
+        <div class="front">Qual é a capital da Itália?</div>
+        <div class="back">Roma</div>
+    </div>
+</div>
+
+</body>
+</html>
