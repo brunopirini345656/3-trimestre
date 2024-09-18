@@ -1,10 +1,28 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
     <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            animation: backgroundChange 10s infinite alternate;
+        }
+
+        @keyframes backgroundChange {
+            0% { background-color: #ff7e5f; }
+            25% { background-color: #feb47b; }
+            50% { background-color: #86e3ce; }
+            75% { background-color: #5c6bc0; }
+            100% { background-color: #ab47bc; }
+        }
+
         .flashcard {
             width: 200px;
             height: 100px;
