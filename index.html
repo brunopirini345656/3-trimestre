@@ -3,20 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flashcards Animados</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Perguntas sobre Futebol</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+        }
+        .card {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px auto;
+            width: 300px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .card:hover {
+            transform: scale(1.05);
+        }
+        .question {
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-    <div class="flashcard" id="flashcard">
-        <div class="front">
-            <h2>Pergunta?</h2>
-        </div>
-        <div class="back">
-            <h2>Resposta!</h2>
-        </div>
-    </div>
-    <button onclick="flipCard()">Virar Flashcard</button>
 
-    <script src="script.js"></script>
+    <h1>Perguntas sobre Futebol</h1>
+
+    <div class="card">
+        <div class="question">1. Qual é o time com mais títulos da Copa do Mundo?</div>
+        <p>Resposta: Brasil</p>
+    </div>
+
+    <div class="card">
+        <div class="question">2. Quem é o maior artilheiro da história da Liga dos Campeões?</div>
+        <p>Resposta: Cristiano Ronaldo</p>
+    </div>
+
+    <div class="card">
+        <div class="question">3. Em que ano o Brasil venceu sua primeira Copa do Mundo?</div>
+        <p>Resposta: 1958</p>
+    </div>
+
+    <div class="card">
+        <div class="question">4. Qual jogador é conhecido como "O Rei do Futebol"?</div>
+        <p>Resposta: Pelé</p>
+    </div>
+
+    <div class="card">
+        <div class="question">5. Qual clube é conhecido como "Os Merengues"?</div>
+        <p>Resposta: Real Madrid</p>
+    </div>
+
 </body>
 </html>
