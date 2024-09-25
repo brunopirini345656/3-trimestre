@@ -13,23 +13,20 @@
             justify-content: center;
             align-items: center;
             flex-wrap: wrap;
-            animation: backgroundChange 10s infinite alternate;
+            background-color: #fff; /* Fundo branco */
             font-family: Arial, sans-serif;
-        }
-
-        @keyframes backgroundChange {
-            0% { background-color: #ff7e5f; }
-            25% { background-color: #feb47b; }
-            50% { background-color: #86e3ce; }
-            75% { background-color: #5c6bc0; }
-            100% { background-color: #ab47bc; }
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="150" height="150"><text x="0" y="40" font-size="40" fill="%23FF0000">?</text></svg>'); /* Ponto de interrogação vermelho */
+            background-repeat: repeat; /* Repete a imagem */
+            background-size: 80px 80px; /* Tamanho do padrão */
         }
 
         header {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
-            color: #fff;
+            color: #000; /* Cor do título alterada para preto */
+            position: relative;
+            z-index: 1; /* Coloca o header acima do fundo */
         }
 
         .flashcard {
@@ -41,6 +38,8 @@
             overflow: hidden;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s;
+            position: relative;
+            z-index: 1; /* Coloca o flashcard acima do fundo */
         }
 
         .flashcard:hover {
@@ -81,46 +80,160 @@
             transform: rotateY(180deg);
             background-color: #90be6d;
         }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .arrow {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            font-size: 20px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .flashcard:hover .arrow {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
 
 <header>Flashcards do Mundo</header>
 
-<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
-    <div class="card">
-        <div class="front">Qual é a capital da França?</div>
-        <div class="back">Paris</div>
+<div class="container">
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da França?</div>
+            <div class="back">Paris</div>
+        </div>
+        <div class="arrow">➔</div>
     </div>
-</div>
 
-<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
-    <div class="card">
-        <div class="front">Qual é a capital da Espanha?</div>
-        <div class="back">Madri</div>
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Espanha?</div>
+            <div class="back">Madri</div>
+        </div>
+        <div class="arrow">➔</div>
     </div>
-</div>
 
-<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
-    <div class="card">
-        <div class="front">Qual é a capital do Japão?</div>
-        <div class="back">Tóquio</div>
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital do Japão?</div>
+            <div class="back">Tóquio</div>
+        </div>
+        <div class="arrow">➔</div>
     </div>
-</div>
 
-<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
-    <div class="card">
-        <div class="front">Qual é a capital da Alemanha?</div>
-        <div class="back">Berlim</div>
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Alemanha?</div>
+            <div class="back">Berlim</div>
+        </div>
+        <div class="arrow">➔</div>
     </div>
-</div>
 
-<div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
-    <div class="card">
-        <div class="front">Qual é a capital da Itália?</div>
-        <div class="back">Roma</div>
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Itália?</div>
+            <div class="back">Roma</div>
+        </div>
+        <div class="arrow">➔</div>
     </div>
-</div>
 
-</body>
-</html>
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital do Brasil?</div>
+            <div class="back">Brasília</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Argentina?</div>
+            <div class="back">Buenos Aires</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital do Canadá?</div>
+            <div class="back">Ottawa</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Rússia?</div>
+            <div class="back">Moscovo</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Austrália?</div>
+            <div class="back">Canberra</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Índia?</div>
+            <div class="back">Nova Délhi</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da África do Sul?</div>
+            <div class="back">Pretória</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Suécia?</div>
+            <div class="back">Estocolmo</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Noruega?</div>
+            <div class="back">Oslo</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Dinamarca?</div>
+            <div class="back">Copenhague</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class="flashcard" onclick="this.querySelector('.card').classList.toggle('flip')">
+        <div class="card">
+            <div class="front">Qual é a capital da Grécia?</div>
+            <div class="back">Atenas</div>
+        </div>
+        <div class="arrow">➔</div>
+    </div>
+
+    <div class
