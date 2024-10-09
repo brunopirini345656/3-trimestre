@@ -30,6 +30,15 @@ DOCTYPE html>
             }
         }
 
+        @keyframes letterAnimation {
+            0%, 100% {
+                text-shadow: 0 0 rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                text-shadow: 0 5px rgba(0, 0, 0, 0.4);
+            }
+        }
+
         header {
             font-size: 24px;
             font-weight: bold;
@@ -37,7 +46,7 @@ DOCTYPE html>
             color: #000; /* Cor do título alterada para preto */
             position: relative;
             z-index: 1; /* Coloca o header acima do fundo */
-            animation: oscillate 1s ease-in-out infinite; /* Aplica a animação */
+            animation: oscillate 1s ease-in-out infinite, letterAnimation 1s ease-in-out infinite; /* Aplica animações */
         }
 
         .flashcard {
@@ -237,16 +246,4 @@ DOCTYPE html>
             <div class="front">Qual é a capital da Dinamarca?</div>
             <div class="back">Copenhague</div>
         </div>
-        <div class="arrow">➔</div>
-    </div>
-
-    <div class="flashcard">
-        <div class="card" onclick="this.classList.toggle('flip')">
-            <div class="front">Qual é a capital da Grécia?</div>
-            <div class="back">Atenas</div>
-        </div>
-        <div class="arrow">➔</div>
-    </div>
-</div>
-</body>
-</html>
+        <div class="arrow
