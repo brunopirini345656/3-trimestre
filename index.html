@@ -1,7 +1,8 @@
 DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta c<!harset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Flashcards</title>
     <style>
@@ -20,6 +21,15 @@ DOCTYPE html>
             background-size: 80px 80px; /* Tamanho do padrão */
         }
 
+        @keyframes oscillate {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px); /* Ajuste a altura do movimento */
+            }
+        }
+
         header {
             font-size: 24px;
             font-weight: bold;
@@ -27,6 +37,7 @@ DOCTYPE html>
             color: #000; /* Cor do título alterada para preto */
             position: relative;
             z-index: 1; /* Coloca o header acima do fundo */
+            animation: oscillate 1s ease-in-out infinite; /* Aplica a animação */
         }
 
         .flashcard {
@@ -106,7 +117,7 @@ DOCTYPE html>
 </head>
 <body>
 
-<header>FLASHCARD DO MUNDO</header>
+<header>FLASHCARDS DO MUNDO</header>
 
 <div class="container">
     <div class="flashcard">
